@@ -1,5 +1,5 @@
 import sys
-from tkinter import Tk, filedialog, Label, Button, Frame, ttk, Text, END, Scrollbar
+from tkinter import Tk, filedialog, Label, Button, Frame, ttk, Text, END, Scrollbar, WORD
 from PyPDF2 import PdfReader
 from threading import Thread
 import pyttsx3
@@ -80,7 +80,7 @@ combo_engine_select.bind("<<ComboboxSelected>>", voice_select)
 label_voice_engine = Label(mainframe, text="Choose Voice Engine", bg=BG_COLOR, fg="white", font=("", 14, "bold"))
 label_filename = Label(mainframe, bg=BG_COLOR, fg="white", font=("", 14))
 
-text_content = Text(mainframe, bg="#303030", fg="white", insertbackground="red")
+text_content = Text(mainframe, bg="#303030", fg="white", insertbackground="red", wrap=WORD)
 
 scrollbar = Scrollbar(mainframe, command=text_content.yview, width=20)
 text_content.config(yscrollcommand=scrollbar.set)
